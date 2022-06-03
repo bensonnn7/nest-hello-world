@@ -1,11 +1,22 @@
-import { Controller, Get, Post } from '@nestjs/common';
-
+import { Controller, Get, Post, Body, Param, Patch } from '@nestjs/common';
+import { UserService } from './user.service';
+import { CreateUserDto, UpdateUserDto } from './user.dto';
 @Controller('user')
 export class UserController {
-  constructor() {}
+  constructor(private readonly userService: UserService) {}
 
-  @Get()
-  getUser(): string {
-    return 'hi';
+  @Get('hi')
+  getUser() {
+    return 'get user';
+  }
+
+  @Post('signup')
+  signup(@Body() body: CreateUserDto): any {
+    return this.userService.signup();
+  }
+
+  @Patch(':id')
+  updateUser(@Param('id') id: string, @Body() body: UpdateUserDto): any {
+    return this.userService.update();
   }
 }
