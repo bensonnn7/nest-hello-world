@@ -5,14 +5,18 @@ content-type: application/json
 {"email": "22@22.com", "password": "asdlfkajsd"}
 
 ### Create a new user
-POST http://localhost:3000/user/signup
+POST http://localhost:3000/auth/local/register
 content-type: application/json
-
 {
   "email": "22@22.com",
   "password": "asdlfkajsd",
   "username": "123123"
 }
+
+### get user
+GET http://localhost:3000/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiMjJAMjIuY29tIiwidHlwZSI6InVzZXIiLCJpYXQiOjE2NTQyODc5NDZ9.jHzuP0-AQHqxQGvVJF_qkvMPm50j2snB9OddDIZkQuc 
+
 
 ### Update a user
 PATCH http://localhost:3000/user/1
