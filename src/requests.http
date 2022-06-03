@@ -1,15 +1,21 @@
+### login
+POST http://localhost:3000/auth/local/login
+content-type: application/json
+
+{"email": "22@22.com", "password": "asdlfkajsd"}
+
 ### Create a new user
 POST http://localhost:3000/user/signup
 content-type: application/json
 
 {
-  "email": "123@123.com",
+  "email": "22@22.com",
   "password": "asdlfkajsd",
   "username": "123123"
 }
 
 ### Update a user
-PATCH http://localhost:3000/user/2
+PATCH http://localhost:3000/user/1
 content-type: application/json
 
 {
@@ -17,7 +23,7 @@ content-type: application/json
 }
 
 ### Find a particular user with a given ID
-GET http://localhost:3000/auth/2
+GET http://localhost:3000/user/2
 
 ### Find all users with a given email
 GET http://localhost:3000/auth?email=asdf@asdf.com

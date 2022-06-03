@@ -9,8 +9,8 @@ import {
 } from 'typeorm';
 import { IsEmail } from 'class-validator';
 
-@Entity('user')
-export class UserEntity {
+@Entity()
+export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
